@@ -1,0 +1,3 @@
+[build]
+entrypoints = ["src/background.ts", "src/content.ts", "src/injected.ts"]
+outdir = "dist"

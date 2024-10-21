@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Detectorino",
+  "version": "1.0.0",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  "action": {
+    "default_popup": "",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["dist/injected.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
